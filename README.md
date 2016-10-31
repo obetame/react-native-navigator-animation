@@ -35,6 +35,7 @@ Animation has been defined:
 2. `AnimationScaleInRightDown`
 3. `AnimationScaleInRightUp`
 4. `AnimationRotateInLeft`
+5. `SwitchMain`(switch tab no animation)
 
 Custom animation API:
 
