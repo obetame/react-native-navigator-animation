@@ -11,7 +11,7 @@ npm install react-native-navigator-animation --save
 ## Use
 
 ```js
-const {AnimationScaleInRightDown} from "react-native-nvigator-animation";
+import {AnimationScaleInRightDown} from "react-native-nvigator-animation";
 
 <Navigator 
   initialRoute={Routes}
