@@ -1,7 +1,6 @@
-let buildStyleInterpolator = require('buildStyleInterpolator');
-let NavigatorSceneConfigs = require('NavigatorSceneConfigs');//转场动画
-let PixelRatio = require('PixelRatio');
-let Dimensions = require('Dimensions');
+import { PixelRatio, Dimensions,Navigator,buildStyleInterpolator } from 'react-native';
+// let buildStyleInterpolator = require('buildStyleInterpolator');
+let NavigatorSceneConfigs = Navigator.SceneConfigs//转场动画
 const Width = Dimensions.get('window').width;
 const Height = Dimensions.get("window").height;
 const Scale = PixelRatio.get();

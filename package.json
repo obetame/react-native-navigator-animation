@@ -1,6 +1,6 @@
 {
   "name": "react-native-navigator-animation",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "react-native Custom page switch animation.",
   "main": "index.js",
   "scripts": {
