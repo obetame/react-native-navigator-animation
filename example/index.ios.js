@@ -13,7 +13,6 @@ import {
   Navigator
 } from 'react-native';
 import Nav from "./example/Nav";
-import {AnimationScaleInRight} from "./Animation";
 
 const Routes = {
   Nav:{

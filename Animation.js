@@ -1,11 +1,11 @@
-import { PixelRatio, Dimensions,Navigator,buildStyleInterpolator } from 'react-native';
+import { PixelRatio, Dimensions,Navigator } from 'react-native';
 // let buildStyleInterpolator = require('buildStyleInterpolator');
 let NavigatorSceneConfigs = Navigator.SceneConfigs//转场动画
 const Width = Dimensions.get('window').width;
 const Height = Dimensions.get("window").height;
 const Scale = PixelRatio.get();
 
-export const BaseLeftToRightGesture = {
+const BaseLeftToRightGesture = {
 	// If the gesture can end and restart during one continuous touch
 	isDetachable: false,
 
@@ -487,56 +487,139 @@ const CenterScaleOut = {
 }
 
 // 从右边弹出,左边退出
-export const AnimationScaleInRight = Object.assign({},{
-	...NavigatorSceneConfigs.PushFromRight,
-	animationInterpolators:{
-		into:buildStyleInterpolator({
-			...CenterScaleRightIn
-		}),
-		out:buildStyleInterpolator({
-			...CenterScaleLeftOut
-		})
-	}
-});
+function AnimationScaleInRight(init){
+	let buildStyleInterpolator = init;
+	return Object.assign({},{
+		...NavigatorSceneConfigs.PushFromRight,
+		animationInterpolators:{
+			into:buildStyleInterpolator({
+				...CenterScaleRightIn
+			}),
+			out:buildStyleInterpolator({
+				...CenterScaleLeftOut
+			})
+		}
+	});
+}
+// const AnimationScaleInRight = Object.assign({},{
+// 	...NavigatorSceneConfigs.PushFromRight,
+// 	animationInterpolators:{
+// 		into:buildStyleInterpolator({
+// 			...CenterScaleRightIn
+// 		}),
+// 		out:buildStyleInterpolator({
+// 			...CenterScaleLeftOut
+// 		})
+// 	}
+// });
 
 // 从右下角弹出,左下角退出
-export const AnimationScaleInRightDown = Object.assign({},{
-	...NavigatorSceneConfigs.PushFromRight,
-	animationInterpolators:{
-		into:buildStyleInterpolator({
-			...DownScaleIn
-		}),
-		out:buildStyleInterpolator({
-			...DownScaleOut
-		})
-	}
-});
+function AnimationScaleInRightDown(init){
+	let buildStyleInterpolator = init;
+	return Object.assign({},{
+		...NavigatorSceneConfigs.PushFromRight,
+		animationInterpolators:{
+			into:buildStyleInterpolator({
+				...DownScaleIn
+			}),
+			out:buildStyleInterpolator({
+				...DownScaleOut
+			})
+		}
+	});
+}
+// const AnimationScaleInRightDown = Object.assign({},{
+// 	...NavigatorSceneConfigs.PushFromRight,
+// 	animationInterpolators:{
+// 		into:buildStyleInterpolator({
+// 			...DownScaleIn
+// 		}),
+// 		out:buildStyleInterpolator({
+// 			...DownScaleOut
+// 		})
+// 	}
+// });
+
+// 从右下角弹出,左下角退出
+function AnimationScaleInRightDown(init){
+	let buildStyleInterpolator = init;
+	return Object.assign({},{
+		...NavigatorSceneConfigs.PushFromRight,
+		animationInterpolators:{
+			into:buildStyleInterpolator({
+				...DownScaleIn
+			}),
+			out:buildStyleInterpolator({
+				...DownScaleOut
+			})
+		}
+	});
+}
+// const AnimationScaleInRightDown = Object.assign({},{
+// 	...NavigatorSceneConfigs.PushFromRight,
+// 	animationInterpolators:{
+// 		into:buildStyleInterpolator({
+// 			...DownScaleIn
+// 		}),
+// 		out:buildStyleInterpolator({
+// 			...DownScaleOut
+// 		})
+// 	}
+// });
 
 // 从右上角弹出,左上角退出
-export const AnimationScaleInRightUp = Object.assign({},{
-	...NavigatorSceneConfigs.PushFromRight,
-	animationInterpolators:{
-		into:buildStyleInterpolator({
-			...UpScaleIn
-		}),
-		out:buildStyleInterpolator({
-			...UpScaleOut
-		})
-	}
-});
+function AnimationScaleInRightUp(init){
+	let buildStyleInterpolator = init;
+	return Object.assign({},{
+		...NavigatorSceneConfigs.PushFromRight,
+		animationInterpolators:{
+			into:buildStyleInterpolator({
+				...UpScaleIn
+			}),
+			out:buildStyleInterpolator({
+				...UpScaleOut
+			})
+		}
+	});
+}
+// const AnimationScaleInRightUp = Object.assign({},{
+// 	...NavigatorSceneConfigs.PushFromRight,
+// 	animationInterpolators:{
+// 		into:buildStyleInterpolator({
+// 			...UpScaleIn
+// 		}),
+// 		out:buildStyleInterpolator({
+// 			...UpScaleOut
+// 		})
+// 	}
+// });
 
 // 右边旋转进入,左边旋转退出
-export const AnimationRotateInLeft = Object.assign({},{
-	...NavigatorSceneConfigs.FadeAndroid,
-	animationInterpolators:{
-		into:buildStyleInterpolator({
-			...RightRotateInDown
-		}),
-		out:buildStyleInterpolator({
-			...LeftRotateOutDown
-		})
-	}
-});
+function AnimationRotateInLeft(init){
+	let buildStyleInterpolator = init;
+	return Object.assign({},{
+		...NavigatorSceneConfigs.FadeAndroid,
+		animationInterpolators:{
+			into:buildStyleInterpolator({
+				...RightRotateInDown
+			}),
+			out:buildStyleInterpolator({
+				...LeftRotateOutDown
+			})
+		}
+	});
+}
+// const AnimationRotateInLeft = Object.assign({},{
+// 	...NavigatorSceneConfigs.FadeAndroid,
+// 	animationInterpolators:{
+// 		into:buildStyleInterpolator({
+// 			...RightRotateInDown
+// 		}),
+// 		out:buildStyleInterpolator({
+// 			...LeftRotateOutDown
+// 		})
+// 	}
+// });
 
 // 数据
 const AnimationData = {
@@ -571,23 +654,37 @@ function CheckParams(parms){
 
 // 定制动画(是上/下,是左/右,是进/出,是否支持手势)
 // 第一个参数必须是定义的进入动画,第二个必须是退出的动画
-export function CustomAnimation(LeftRightIn,UpDowmOut,Gestures){
-	return Object.assign({},
-		NavigatorSceneConfigs.FadeAndroid,{
-		animationInterpolators:{
-			into:buildStyleInterpolator({
-				...CheckParams(LeftRightIn)
-			}),
-			out:buildStyleInterpolator({
-				...CheckParams(UpDowmOut)
-			})
-		},
-		gestures:Gestures?Gestures:{
-			pop:{
-				...BaseLeftToRightGesture,
-				direction:"left-to-right",
-				fullDistance:Width
+function CustomAnimation(init){
+	let buildStyleInterpolator = init;
+	return (LeftRightIn,UpDowmOut,Gestures)=>{
+		return Object.assign({},
+			NavigatorSceneConfigs.FadeAndroid,{
+			animationInterpolators:{
+				into:buildStyleInterpolator({
+					...CheckParams(LeftRightIn)
+				}),
+				out:buildStyleInterpolator({
+					...CheckParams(UpDowmOut)
+				})
+			},
+			gestures:Gestures?Gestures:{
+				pop:{
+					...BaseLeftToRightGesture,
+					direction:"left-to-right",
+					fullDistance:Width
+				}
 			}
-		}
-	})
+		})
+	}
+}
+
+export default function AnimationInit(init) {
+	return {
+		AnimationScaleInRight:AnimationScaleInRight(init),
+		AnimationScaleInRightDown:AnimationScaleInRightDown(init),
+		AnimationScaleInRightUp:AnimationScaleInRightUp(init),
+		AnimationRotateInLeft:AnimationRotateInLeft(init),
+		CustomAnimation:CustomAnimation(init),
+		BaseLeftToRightGesture:BaseLeftToRightGesture
+	}
 }

@@ -8,7 +8,10 @@ import {
 	PixelRatio,
 	TouchableOpacity
 } from 'react-native';
-import {AnimationScaleInRight,AnimationScaleInRightDown,AnimationScaleInRightUp,AnimationRotateInLeft,CustomAnimation} from "../Animation";
+
+import AnimationInit from "react-native-navigator-animation";
+let buildStyleInterpolator = require('buildStyleInterpolator');
+let NavAnimate = AnimationInit(buildStyleInterpolator);
 
 class Nav extends Component{
 	render(){
@@ -51,31 +54,31 @@ class Nav extends Component{
 		const {navigator} = this.props;
 		if(index===1){
 			navigator.push({
-				name:"Nav",component:Nav,index:1,animationType:AnimationScaleInRight
+				name:"Nav",component:Nav,index:1,animationType:NavAnimate.AnimationScaleInRight
 			});
 			return;
 		}
 		if(index===2){
 			navigator.push({
-				name:"Nav",component:Nav,index:2,animationType:AnimationScaleInRightDown
+				name:"Nav",component:Nav,index:2,animationType:NavAnimate.AnimationScaleInRightDown
 			});
 			return;
 		}
 		if(index===3){
 			navigator.push({
-				name:"Nav",component:Nav,index:3,animationType:AnimationScaleInRightUp
+				name:"Nav",component:Nav,index:3,animationType:NavAnimate.AnimationScaleInRightUp
 			});
 			return;
 		}
 		if(index===4){
 			navigator.push({
-				name:"Nav",component:Nav,index:4,animationType:AnimationRotateInLeft
+				name:"Nav",component:Nav,index:4,animationType:NavAnimate.AnimationRotateInLeft
 			});
 			return;
 		}
 		if(index===5){
 			navigator.push({
-				name:"Nav",component:Nav,index:5,animationType:CustomAnimation("rightin","leftout")
+				name:"Nav",component:Nav,index:5,animationType:NavAnimate.CustomAnimation("rightin","leftout")
 			});
 			return;
 		}
