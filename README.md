@@ -2,7 +2,7 @@
 
 Custom page switch animation.
 
-[](./animation.gif)
+![](https://github.com/zhouyuexie/react-native-navigator-animation/blob/master/animation.gif)
 
 ## Install
 
