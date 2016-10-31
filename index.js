@@ -1,4 +1,4 @@
-import {AnimationScaleInRight,AnimationScaleInRightDown,AnimationScaleInRightUp,AnimationRotateInLeft,CustomAnimation} from "./Animation";
+import {AnimationScaleInRight,AnimationScaleInRightDown,AnimationScaleInRightUp,AnimationRotateInLeft,CustomAnimation,BaseLeftToRightGesture} from "./Animation";
 
 export default {
 	AnimationScaleInRight:AnimationScaleInRight,
