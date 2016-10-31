@@ -1,4 +1,4 @@
-# react-native-nvigator-animation
+# react-native-navigator-animation
 
 Custom page switch animation.
 
@@ -11,7 +11,7 @@ npm install react-native-navigator-animation --save
 ## Use
 
 ```js
-import {AnimationScaleInRightDown} from "react-native-nvigator-animation";
+import {AnimationScaleInRightDown} from "react-native-navigator-animation";
 
 <Navigator 
   initialRoute={Routes}
@@ -122,7 +122,7 @@ const BaseLeftToRightGesture = {
 You can use like this:
 
 ```js
-const {BaseLeftToRightGesture,CustomAnimation} from "react-native-nvigator-animation";
+const {BaseLeftToRightGesture,CustomAnimation} from "react-native-navigator-animation";
 
 CustomAnimation("rightin","leftout",{
   ...BaseLeftToRightGesture,
@@ -136,11 +136,11 @@ CustomAnimation("rightin","leftout",{
 
 1. step 1
 
-`git clone https://github.com/zhouyuexie/react-native-nvigator-animation.git`
+`git clone https://github.com/zhouyuexie/react-native-navigator-animation.git`
 
 2. step 2
 
-`cd ./react-native-nvigator-animation/example`
+`cd ./react-native-navigator-animation/example`
 
 3. step 3
 
