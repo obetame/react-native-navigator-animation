@@ -49,34 +49,26 @@ Optional value of the first parameter:
 // In was parameter "actionIn"
 // Out was parameter "actionOut"
 
-UpLeftIn,//first parameter optional
-UpLeftOut,//Second parameter optional
-UpRightIn,
-UpRightOut,
-DownLeftIn,
-DownLeftOut,
-DownRightIn,
-DownRightOut,
-RightIn,
-RightOut,
-LeftIn,
-LeftOut,
-RightRotateIn,
-LeftRotateOut,
-RightRotateInUp,
-LeftRotateOutUp,
-LeftRotateY,//In
-RightRotateY,//Out
-LeftRotateX,//In
-RightRotateX,//Out
-CenterScaleIn,
-CenterScaleOut
+//{first parameter ,Second parameter}
+{UpLeftIn,UpLeftOut},
+{UpRightIn,UpRightOut},
+{DownLeftIn,DownLeftOut},
+{DownRightIn,DownRightOut},
+{RightIn,RightOut},
+{LeftIn,LeftOut},
+{RotateRightIn,RotateLeftOut},
+{RotateRightinUp,RotateLeftoutUp},
+{RotateiInY,RotateOutY},
+{RotateInX,RotateOutX},
+{CenterScaleIn,CenterScaleOut}
 ```
 
 You can use it like this:
 
 ```js
-CustomAnimation("rightin","leftout");
+CustomAnimation("UpLeftIn","UpLeftOut");
+// Or mix
+CustomAnimation("UpRightIn","UpLeftOut");
 ```
 
 The third parameter is gesture:
