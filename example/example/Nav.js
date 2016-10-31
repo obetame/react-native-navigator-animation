@@ -78,7 +78,7 @@ class Nav extends Component{
 		}
 		if(index===5){
 			navigator.push({
-				name:"Nav",component:Nav,index:5,animationType:NavAnimate.CustomAnimation("rightin","leftout")
+				name:"Nav",component:Nav,index:5,animationType:NavAnimate.CustomAnimation("CenterScaleIn","CenterScaleOut")
 			});
 			return;
 		}

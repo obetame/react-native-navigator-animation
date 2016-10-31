@@ -13,10 +13,12 @@ import {
   Navigator
 } from 'react-native';
 import Nav from "./example/Nav";
-
+import AnimationInit from "react-native-navigator-animation";
+let buildStyleInterpolator = require('buildStyleInterpolator');
+let NavAnimate = AnimationInit(buildStyleInterpolator);
 const Routes = {
   Nav:{
-    name:"Nav",component:Nav,index:0,animationType:AnimationScaleInRight
+    name:"Nav",component:Nav,index:0,animationType:NavAnimate.AnimationScaleInRight
   },
 }
 

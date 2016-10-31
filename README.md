@@ -2,6 +2,8 @@
 
 Custom page switch animation.
 
+[](./animation.gif)
+
 ## Install
 
 ```shell

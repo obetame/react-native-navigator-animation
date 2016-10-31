@@ -12,10 +12,13 @@ import {
   View
 } from 'react-native';
 import Nav from "./example/Nav";
-
+import Nav from "./example/Nav";
+import AnimationInit from "react-native-navigator-animation";
+let buildStyleInterpolator = require('buildStyleInterpolator');
+let NavAnimate = AnimationInit(buildStyleInterpolator);
 const Routes = {
   Nav:{
-    name:"Nav",component:Nav,index:0,animationType:AnimationScaleInRight
+    name:"Nav",component:Nav,index:0,animationType:NavAnimate.AnimationScaleInRight
   },
 }
 
@@ -34,25 +37,5 @@ class example extends Component {
     )
   }
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
 
 AppRegistry.registerComponent('example', () => example);
