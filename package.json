@@ -1,5 +1,5 @@
 {
-  "name": "react-native-nvigator-animation",
+  "name": "react-native-navigator-animation",
   "version": "1.0.2",
   "description": "react-native Custom page switch animation.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhouyuexie/react-native-nvigator-animation.git"
+    "url": "git+https://github.com/zhouyuexie/react-native-navigator-animation.git"
   },
   "keywords": [
     "react",
@@ -19,7 +19,7 @@
   "author": "zhouyuexie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zhouyuexie/react-native-nvigator-animation/issues"
+    "url": "https://github.com/zhouyuexie/react-native-navigator-animation/issues"
   },
-  "homepage": "https://github.com/zhouyuexie/react-native-nvigator-animation#readme"
+  "homepage": "https://github.com/zhouyuexie/react-native-navigator-animation#readme"
 }
