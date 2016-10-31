@@ -119,9 +119,11 @@ const BaseLeftToRightGesture = {
 You can use like this:
 
 ```js
-const {BaseLeftToRightGesture,CustomAnimation} from "react-native-navigator-animation";
+import AnimationInit from "react-native-navigator-animation";
+let buildStyleInterpolator = require('buildStyleInterpolator');
+let NavAnimate = AnimationInit(buildStyleInterpolator);
 
-CustomAnimation("rightin","leftout",{
+NavAnimate.CustomAnimation("rightin","leftout",{
   ...BaseLeftToRightGesture,
   jumpTo:{
     // write you gesture
