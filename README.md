@@ -5,7 +5,7 @@ Custom page switch animation.
 ## Install
 
 ```shell
-npm install react-native-nvigator-animation --save
+npm install react-native-navigator-animation --save
 ```
 
 ## Use
