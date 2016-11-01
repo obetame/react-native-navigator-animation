@@ -18,7 +18,7 @@ let buildStyleInterpolator = require('buildStyleInterpolator');
 let NavAnimate = AnimationInit(buildStyleInterpolator);
 const Routes = {
   Nav:{
-    name:"Nav",component:Nav,index:0,animationType:NavAnimate.AnimationScaleInRight
+    name:"Nav",component:Nav,index:0,animationType:NavAnimate.AnimationScaleInRight,params:{bgColor:"#76EEC6"}
   },
 }
 

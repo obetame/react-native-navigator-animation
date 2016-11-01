@@ -15,8 +15,9 @@ let NavAnimate = AnimationInit(buildStyleInterpolator);
 
 class Nav extends Component{
 	render(){
+		const {bgColor} = this.props;
 		return (
-			<View style={styles.container}>
+			<View style={[styles.container,{backgroundColor:bgColor?bgColor:"#76EEC6"}]}>
 				<TouchableOpacity
 					activeOpacity={0.9}
 					onPress={()=>{this._onPress(1)}}
@@ -54,31 +55,31 @@ class Nav extends Component{
 		const {navigator} = this.props;
 		if(index===1){
 			navigator.push({
-				name:"Nav",component:Nav,index:1,animationType:NavAnimate.AnimationScaleInRight
+				name:"Nav",component:Nav,index:1,animationType:NavAnimate.AnimationScaleInRight,params:{bgColor:"#303030"}
 			});
 			return;
 		}
 		if(index===2){
 			navigator.push({
-				name:"Nav",component:Nav,index:2,animationType:NavAnimate.AnimationScaleInRightDown
+				name:"Nav",component:Nav,index:2,animationType:NavAnimate.AnimationScaleInRightDown,params:{bgColor:"#00EE00"}
 			});
 			return;
 		}
 		if(index===3){
 			navigator.push({
-				name:"Nav",component:Nav,index:3,animationType:NavAnimate.AnimationScaleInRightUp
+				name:"Nav",component:Nav,index:3,animationType:NavAnimate.AnimationScaleInRightUp,params:{bgColor:"#8DEEEE"}
 			});
 			return;
 		}
 		if(index===4){
 			navigator.push({
-				name:"Nav",component:Nav,index:4,animationType:NavAnimate.AnimationRotateInLeft
+				name:"Nav",component:Nav,index:4,animationType:NavAnimate.AnimationRotateInLeft,params:{bgColor:"#CD0000"}
 			});
 			return;
 		}
 		if(index===5){
 			navigator.push({
-				name:"Nav",component:Nav,index:5,animationType:NavAnimate.CustomAnimation("CenterScaleIn","CenterScaleOut")
+				name:"Nav",component:Nav,index:5,animationType:NavAnimate.CustomAnimation("CenterScaleIn","CenterScaleOut"),params:{bgColor:"#FFA500"}
 			});
 			return;
 		}
@@ -94,19 +95,20 @@ const styles = StyleSheet.create({
 		justifyContent:"center",
 	},
 	btn:{
-		marginLeft:50,
-		marginRight:50,
+		marginLeft:40,
+		marginRight:40,
 		alignItems:"center",
 		justifyContent:"center",
 		height:40,
-		borderWidth:1,
+		borderWidth:2,
 		borderColor:"#fff",
 		borderRadius:10,
 		marginTop:10
 	},
 	text:{
 		color:"#fff",
-		fontSize:20
+		fontSize:20,
+		fontWeight:"bold"
 	}
 });
 
