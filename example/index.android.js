@@ -9,9 +9,9 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
-import Nav from "./example/Nav";
 import Nav from "./example/Nav";
 import AnimationInit from "react-native-navigator-animation";
 let buildStyleInterpolator = require('buildStyleInterpolator');
