@@ -478,6 +478,30 @@ const CenterScaleOut = {
 	},
 }
 
+const Main = {
+	opacity:{
+		value:1,
+		type:"constant"
+	}
+}
+
+function SwitchMain(init){
+	let buildStyleInterpolator = init;
+	return Object.assign({},{
+		...NavigatorSceneConfigs.FadeAndroid,
+		animationInterpolators:{
+			into:buildStyleInterpolator({
+				...Main,
+			}),
+			out:buildStyleInterpolator({
+				...Main,
+			})
+		},
+		defaultTransitionVelocity:0,
+		springTension:1000
+	});
+}
+
 // 从右边弹出,左边退出
 function AnimationScaleInRight(init){
 	let buildStyleInterpolator = init;
@@ -501,33 +525,6 @@ function AnimationScaleInRight(init){
 // 		}),
 // 		out:buildStyleInterpolator({
 // 			...CenterScaleLeftOut
-// 		})
-// 	}
-// });
-
-// 从右下角弹出,左下角退出
-function AnimationScaleInRightDown(init){
-	let buildStyleInterpolator = init;
-	return Object.assign({},{
-		...NavigatorSceneConfigs.PushFromRight,
-		animationInterpolators:{
-			into:buildStyleInterpolator({
-				...DownScaleIn
-			}),
-			out:buildStyleInterpolator({
-				...DownScaleOut
-			})
-		}
-	});
-}
-// const AnimationScaleInRightDown = Object.assign({},{
-// 	...NavigatorSceneConfigs.PushFromRight,
-// 	animationInterpolators:{
-// 		into:buildStyleInterpolator({
-// 			...DownScaleIn
-// 		}),
-// 		out:buildStyleInterpolator({
-// 			...DownScaleOut
 // 		})
 // 	}
 // });
@@ -677,6 +674,7 @@ export default function AnimationInit(init) {
 		AnimationScaleInRightUp:AnimationScaleInRightUp(init),
 		AnimationRotateInLeft:AnimationRotateInLeft(init),
 		CustomAnimation:CustomAnimation(init),
-		BaseLeftToRightGesture:BaseLeftToRightGesture
+		BaseLeftToRightGesture:BaseLeftToRightGesture,
+		SwitchMain:SwitchMain(init)
 	}
 }
