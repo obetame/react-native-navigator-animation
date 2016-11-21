@@ -31,6 +31,15 @@ const BaseLeftToRightGesture = {
 	direction: 'left-to-right',
 };
 
+const BaseConfig = {
+	// Rebound spring parameters when transitioning FROM this scene
+  springFriction: 26,
+  springTension: 200,
+
+  // Velocity to start at when transitioning without gesture
+  defaultTransitionVelocity: 1.5,
+}
+
 const Opacity = {
 	opacity: {
 		value: 1.0,
@@ -645,7 +654,7 @@ function CheckParams(parms){
 // 第一个参数必须是定义的进入动画,第二个必须是退出的动画
 function CustomAnimation(init){
 	let buildStyleInterpolator = init;
-	return (LeftRightIn,UpDowmOut,Gestures)=>{
+	return (LeftRightIn,UpDowmOut,Gestures,Base={springFriction:26,springTension:200,defaultTransitionVelocity:1.5})=>{
 		return Object.assign({},
 			NavigatorSceneConfigs.FadeAndroid,{
 			animationInterpolators:{
@@ -662,7 +671,11 @@ function CustomAnimation(init){
 					direction:"left-to-right",
 					fullDistance:Width
 				}
-			}
+			},
+			...Base
+			// springFriction:Base.springFriction,
+			// springTension:Base.springTension,
+			// defaultTransitionVelocity:Base.defaultTransitionVelocity,
 		})
 	}
 }

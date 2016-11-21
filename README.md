@@ -41,7 +41,7 @@ Animation has been defined:
 
 Custom animation API:
 
-5. `CustomAnimation("actionIn","actionOut",[gesture Object])`
+5. `CustomAnimation("actionIn","actionOut",[gesture Object],[base Object])`
 
 Optional value of the first parameter:
 
@@ -71,7 +71,7 @@ CustomAnimation("UpLeftIn","UpLeftOut");
 CustomAnimation("UpRightIn","UpLeftOut");
 ```
 
-The third parameter is gesture:
+The third parameter is `gesture`:
 
 ```js
 {
@@ -83,6 +83,19 @@ The third parameter is gesture:
   jumpForward:null,
   jumpBack:null,
   jumpTo:null
+}
+```
+
+The four parameter is `base`:
+
+```js
+{
+  // Rebound spring parameters when transitioning FROM this scene
+  springFriction: 26,
+  springTension: 200,
+
+  // Velocity to start at when transitioning without gesture
+  defaultTransitionVelocity: 1.5,
 }
 ```
 
@@ -128,6 +141,9 @@ NavAnimate.CustomAnimation("rightin","leftout",{
   jumpTo:{
     // write you gesture
   }
+},{
+  springFriction: 50,
+  springTension: 600,
 })
 ```
 
@@ -148,3 +164,7 @@ NavAnimate.CustomAnimation("rightin","leftout",{
 4. step 4
 
 `react-native run-ios`
+
+## UpdateLog
+
+* 1.2.0:`CustomAnimation` accept four parameters, the fourth argument is an object that contains the control animation parameters
